@@ -15,19 +15,23 @@ function calculateProfitAndLoss(initial, quantity, current) {
         var profitPercentage = (profit / initial) * 100;
         outputE1.innerText = "Hey, the profit is "+profit+" and the percent is "+profitPercentage+"%";
     }
-    else {
+    else if(current==initial) {
         outputE1.innerText = "No pain no gain and no gain no pain";
     }
+    
     
 }
 
 function clickHandler() {
-    var ip = Number(initialPrice.Value);
-    var sqty = Number(stocksQuantity.Value);
-    var cur = Number(currentPrice.Value);
-
+    console.log("clicked");
+    var ip = Number(initialPrice.value);
+    console.log(ip);
+    var sqty = Number(stocksQuantity.value);
+    console.log(sqty);
+    var cur = Number(currentPrice.value);
+    console.log(cur);
     calculateProfitAndLoss(ip,sqty,cur);
 
 }
 
-tellMeBtn.addEventListener('click', clickHandler);
+tellMeBtn.addEventListener('click',clickHandler);
